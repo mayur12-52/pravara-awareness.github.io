@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Awareness Initiative | Pravara Rural Engineering College</title>
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #ff7e5f;
+            --dark: #2d3748;
+            --light: #f7fafc;
+            --success: #48bb78;
+            --warning: #ed8936;
+            --danger: #e53e3e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .hero img {
+            max-width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            margin-bottom: 2rem;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: var(--secondary);
+        }
+        .card img{
+            height: 300px;
+            width: max-content;
+        }
+        
+        .pros-cons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .pros {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(74, 222, 128, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .cons {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(239, 68, 68, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.3);
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #3a56d5;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .team-member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Digital Awareness Initiative</h1>
+            <p>Understanding Mobile & Social Media Addiction Among Students</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="hero">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2858935b-5afd-4cc6-8d93-53d46fed28e3.png" alt="Diverse group of engineering students studying together with laptops and smartphones, some looking distracted by their devices in a college library setting" />
+            <h2>Breaking Free from Digital Dependence</h2>
+            <p>A research project by J-Six Team at Pravara Rural Engineering College, Loni</p>
+        </section>
+        
+        <section id="about">
+            <h2>Understanding Digital Addiction</h2>
+            <p>In today's hyper-connected world, students face unprecedented challenges with mobile and social media usage. Our research explores the impact of digital dependency on academic performance, mental health, and social relationships among engineering students.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3>Benefits of Digital Connectivity</h3>
+                    <ul>
+                        <li>Instant access to educational resources</li>
+                        <li>Enhanced communication with peers and faculty</li>
+                        <li>Opportunities for online learning and skill development</li>
+                        <li>Networking with professionals in the field</li>
+                        <li>Access to global knowledge repositories</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h3>Risks of Excessive Usage</h3>
+                    <ul>
+                        <li>Decreased attention span during lectures</li>
+                        <li>Sleep deprivation from late-night usage</li>
+                        <li>Increased anxiety and depression symptoms</li>
+                        <li>Physical health issues (eye strain, poor posture)</li>
+                        <li>Reduced face-to-face social interactions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="research">
+            <h2>Our Research Findings</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/33c53858-f907-49a6-a40e-cb7e469032b0.png" alt="Infographic showing statistics about average screen time among engineering students with charts and graphs" />
+                    <h3>Screen Time Patterns</h3>
+                    <p>Average engineering students spend 6-8 hours daily on mobile devices, with social media accounting for nearly 60% of usage during academic hours.</p>
+                </div>
+                
+                <div class="card">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b1de8ed4-47aa-4eb1-8ff3-00c2926f1e97.png" alt="Comparative study showing productivity levels between students who practice digital detox versus those with constant device usage" />
+                    <h3>Productivity Impact</h3>
+                    <p>Students who practiced scheduled device usage showed 28% improvement in academic performance compared to peers with unrestricted access.</p>
+                </div>
+                
+                <div class="card">  
+ <img src="https://landen.imgix.net/blog_dFtoSCIqJSkDPztu/assets/gwrnliDMhqtdThst.jpg?w=880"                    <h3>Behavioral Effects</h3>
+                    <p>Our surveys reveal that 74% of students experience 'phantom vibration syndrome', and 63% report feeling anxious when separated from their devices.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="survey">
+            <h2>Participate in Our Study</h2>
+            <p>Help us understand digital usage patterns by completing this brief survey. Your input will contribute valuable data for our research.</p>
+            
+            <form action="https://formspree.io/f/manboybb"
+               method="POST"
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Your email ID  ">
+                </div>
+                
+                <div class="form-group">
+                    <label>Average Daily Screen Time</label>
+                    <select name="screen_time" required>
+                        <option value="">Select range</option>
+                        <option value="0-2">0-2 hours</option>
+                        <option value="2-4">2-4 hours</option>
+                        <option value="4-6">4-6 hours</option>
+                        <option value="6-8">6-8 hours</option>
+                        <option value="8+">More than 8 hours</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Primary Social Media Platforms Used (Select all that apply)</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="checkbox" id="whatsapp" name="platforms" value="WhatsApp">
+                            <label for="whatsapp">WhatsApp</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="checkbox" id="instagram" name="platforms" value="Instagram">
+                            <label for="instagram">Instagram</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="checkbox" id="facebook" name="platforms" value="Facebook">
+                            <label for="facebook">Facebook</label>
+                        </div>
+                    </div>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="checkbox" id="youtube" name="platforms" value="YouTube">
+                            <label for="youtube">YouTube</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="checkbox" id="snapchat" name="platforms" value="Snapchat">
+                            <label for="snapchat">Snapchat</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="checkbox" id="twitter" name="platforms" value="Twitter">
+                            <label for="twitter">Twitter/X</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="habits">How often do you check your phone without specific purpose?</label>
+                    <select name="habit" id="habits" required>
+                        <option value="">Select option</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="sometimes">Sometimes (3-5 times daily)</option>
+                        <option value="often">Often (6-10 times daily)</option>
+                        <option value="constantly">Constantly (more than 10 times daily)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="impact">How has digital usage impacted your academic performance? (Optional)</label>
+                    <textarea id="impact" name="impact" rows="4" placeholder="Briefly describe your experience"></textarea>
+                </div>
+                
+                <button type="submit">Submit Response</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <h3>Six Member Research Team</h3>
+            <p>Community
+Engagement Project | second Year(ECE) | Pravara Rural Engineering College, Loni</p>
+            
+            <div class="team-members">
+                <div class="team-member">Sarthak Jorvekar</div>
+                <div class="team-member">Mohit Turkane</div>
+                <div class="team-member">Mayur Katore</div>
+                <div class="team-member">Utkarsha Shinde</div>
+                <div class="team-member">Sakshi Gosavi</div>
+                <div class="team-member">Kartiki Kobarne</div>
+            </div>
+            
+            <p style="margin-top: 1rem;">© 2024 Digital Awareness Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            if (!email) {
+                alert('Please enter your email address');
+                return false;
+            }
+            
+            const screenTime = document.querySelector('select[name="screen_time"]').value;
+            if (!screenTime) {
+                alert('Please select your average daily screen time');
+                return false;
+            }
+            
+            const platforms = document.querySelectorAll('input[name="platforms"]:checked');
+            if (platforms.length === 0) {
+                alert('Please select at least one social media platform you use');
+                return false;
+            }
+            
+            const habits = document.getElementById('habits').value;
+            if (!habits) {
+                alert('Please indicate how often you check your phone without purpose');
+                return false;
+            }
+            
+            alert('Thank you for participating in our research!');
+            return true;
+        }
+    </script>
+</body>
+</html>
+
